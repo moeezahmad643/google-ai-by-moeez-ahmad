@@ -6,6 +6,10 @@ const genAI = new GoogleGenerativeAI(process.env.MY_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 const app = express();
 
+app.get('/',(req,res)=>{
+  res.send('Server is Live');
+})
+
 app.get("/output", async (req, res) => {
   const prompt = req.query.prompt;
   const result = await model.generateContent(prompt);
