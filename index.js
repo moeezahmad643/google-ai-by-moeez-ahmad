@@ -2,7 +2,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import express from "express";
 import "dotenv/config";
 
-const genAI = new GoogleGenerativeAI(process.env.API_KEY);
+const genAI = new GoogleGenerativeAI(process.env.MY_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 const app = express();
 
